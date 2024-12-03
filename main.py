@@ -19,6 +19,8 @@ def main():
         case 4:
             printMountain()
         case 5:
+            editMountainName()
+        case 6:
             exitProgram()
         case _:
             invalidChoice()
@@ -30,7 +32,7 @@ def userInputMenu():
         "Add Milestone",
         "Print Milestones",
         "Show your Mountain",
-        "Exit",
+        "Edit Mountain Name" "Exit",
     ]
     printEmptyLine(1)
     printHash(30)
@@ -70,6 +72,7 @@ def addMilestone():
 
     userTask.addMilestone(userTitle, userDesc)
     pressToContinue()
+
     return
 
 
@@ -82,6 +85,19 @@ def printMilestones():
 def printMountain():
     print(userTask)
     return
+
+
+def editMountainName():
+    ## Kev implement ##
+    userTask.printMilestones()  # [milestone1,milestone2,milestone3]
+
+    # 1: milestone #1
+    # 2: milestone #2
+
+    # userInput = int(input("select a number to edit: ")) -> Try catch
+    # Input what milestone to edit the name: 1
+
+    # userTask.milestones[i - 1].title = input("What's the new name?")
 
 
 def exitProgram():

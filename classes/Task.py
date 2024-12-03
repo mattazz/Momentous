@@ -35,8 +35,16 @@ class Mountain:
 
     def printMilestones(self):
         print("Here are your milestones")
-        for milestone in self.milestones:
-            print(milestone)
+
+        for index, item in enumerate(self.milestones, start=1):
+            print(f"{index}: {item}")
+
+            # 1: milestone #1
+            # 2: milestone #2
+
+            # Input what milestone to edit the name: 1
+            # milestoneToEdit = self.milestones[i - 1]
+            # milestoneToEdit.title. = input("What's the new name?")
 
     def updateLoggedHours(self):
         sum = 0
