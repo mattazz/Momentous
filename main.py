@@ -15,9 +15,9 @@ def main():
         case 2:
             addMilestone()
         case 3:
-            printMilestones()
-        case 4:
             printMountain()
+        case 4:
+            printMilestones()
         case 5:
             editMountainName()
         case 6:
@@ -79,18 +79,17 @@ def addMilestone():
 
     return
 
+def printMountain():
+    print(userTask)
+    return
 
 def printMilestones():
     userTask.printMilestones()
     pressToContinue()
     return
 
-def printMountain():
-    print(userTask)
-    return
-
 def editMountainName():
-    print(userTask)
+    userTask.printMountain()
     return
 
 def editMilestones():

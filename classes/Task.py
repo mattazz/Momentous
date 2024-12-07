@@ -33,13 +33,16 @@ class Mountain:
 
         self.milestones.append(userMilestone)
 
+    def printMountain(self):
+        print("Here's your mountain.")
+
     def printMilestones(self):
         print("Here are your milestones")
 
         for index, item in enumerate(self.milestones, start=1):
             print(f"{index}: {item}")
 
-    
+
     def editMountainName(self):
         print("hello") # check only
 
