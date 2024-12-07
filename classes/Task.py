@@ -39,39 +39,34 @@ class Mountain:
         for index, item in enumerate(self.milestones, start=1):
             print(f"{index}: {item}")
 
+    
+    def editMountainName(self):
+        print("hello") # check only
+
     def editMilestones(self):
-        self.printMilestones()
-         # Check whether the user wants to edit any milestones
-        while True:  # Ensure user provides valid input for "Would you like to edit?"
-            confirm = input("Would you like to edit any of your milestones? (Y/N)").lower()
-            if confirm == "n":
-                print("No changes made.")
-                break
-            elif confirm == "y":
-                while True:  # Allow multiple edits of milestones
-                    try:
-                        milestoneToEdit = int(input("Which milestone would you like to edit? (Enter the number): "))
-                        if 1 <= milestoneToEdit <= len(self.milestones):
-                            selectedMilestone = self.milestones[milestoneToEdit - 1]
-                            selectedMilestone.title = input("What would you like to rename the Milestone to? ")
-                            print(f"Here's the new Milestone name: {selectedMilestone.title}. \n")
-                            
-                            # Handle 'edit another' prompt with input validation
-                            while True:
-                                another_edit = input("Would you like to edit another Milestone? (Y/N)").lower()
-                                if another_edit == "n":
-                                    print("Exiting Milestone editing.")
-                                    break  # Break from inner loop and stop editing
-                                elif another_edit == "y":
-                                    break  # Break from inner loop and continue to edit another
-                                else: 
-                                    print("Invalid response. Please enter 'Y' or 'N'.")
-                        else:
-                            print("Please enter the corresponding Milestone number.")
-                    except ValueError:
-                        print("Please enter a valid number corresponding to the milestone you would like to change.")
-            else:
-                print('Invalid input. Please answer "Y" or "N"')
+        while True:  # Allow multiple edits of milestones
+            try:
+                milestoneToEdit = int(input("Which milestone would you like to edit? (Enter the number): "))
+                if 1 <= milestoneToEdit <= len(self.milestones):
+                    selectedMilestone = self.milestones[milestoneToEdit - 1]
+                    selectedMilestone.title = input("What would you like to rename the Milestone to? ")
+                    selectedMilestone.description = input("What description? ")
+                    print(f"Here's the new Milestone name: {selectedMilestone.title}. \n")
+                    print(f"Here's the new Milestone description: {selectedMilestone.description}. \n")
+                    # Handle 'edit another' prompt with input validation
+                    while True:
+                        another_edit = input("Would you like to edit another Milestone? (Y/N)").lower()
+                        if another_edit == "n":
+                            break  # Break from inner loop and stop editing
+                        elif another_edit == "y":
+                            break  # Break from inner loop and continue to edit another
+                        else: 
+                            print("Invalid response. Please enter 'Y' or 'N'.")
+                    break
+                else:
+                    print("Please enter the corresponding Milestone number.")
+            except ValueError:
+                print("Please enter a valid number corresponding to the milestone you would like to change.")
 
     def updateLoggedHours(self):
         sum = 0
