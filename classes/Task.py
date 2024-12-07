@@ -39,7 +39,7 @@ class Mountain:
         for index, item in enumerate(self.milestones, start=1):
             print(f"{index}: {item}")
 
-            # Check whether the user wants to edit any milestones
+        # Check whether the user wants to edit any milestones
         while True:  # Ensure user provides valid input for "Would you like to edit?"
             confirm = input("Would you like to edit any of your milestones? (Y/N)").lower()
             if confirm == "n":
@@ -70,8 +70,6 @@ class Mountain:
                         print("Please enter a valid number corresponding to the milestone you would like to change.")
             else:
                 print('Invalid input. Please answer "Y" or "N"')
-
-        # End of the function (After exiting the main loop)
     def updateLoggedHours(self):
         sum = 0
         for i in self.milestones:
